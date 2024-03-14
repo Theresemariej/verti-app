@@ -58,12 +58,13 @@ import { storeToRefs } from 'pinia'
 import { useAppStore } from '@/store/app'
 const app = useAppStore()
 // -- la variable du state assocciée à cette vue
-const { drapeauxRouge, message } = storeToRefs(app)
+const { drapeauxRouge, message } = storeToRefs(app)//extrait juste les deux varialbles: drapeauxRouge 
+  //et message qui existent dans la fonction useAppStore (ici app)
 
 // -- route vers urgence avec message
 import router from '@/router'
 function versUrgence() {
-  message.value = 'Drapeaux rouges' 
+  message.value = 'Drapeaux rouges' // met à jour la valeur de la variable réactive message
   router.push({ name: '/PageFinUrgence' })
 }
 
